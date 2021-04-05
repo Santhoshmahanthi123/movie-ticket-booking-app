@@ -10,8 +10,14 @@
 # building and running the project 
 
 1. you need to move to project directory eg: cd caw-studios
-2. run the command npm install (installs all node dependencies)
-3. after the compleion of above step run the following command node index.js within the project directory
+2. create .env file using touch .env
+3. place url = <your local mongodb url>
+    eg: url = 'mongodb://127.0.0.1:27017/movie-booling-app'
+   place JWT_SECRET_KEY = <your secret>
+    eg: JWT_SECRET_KEY = itsdamnsecret
+  save the file
+4. run the command npm install (installs all node dependencies)
+5. after the compleion of above step run the following command node index.js within the project directory
 
 # the app starts listening on http://localhost:8080 
 1. the above will be the base url and open index.js file, there you can see all routes that we are using in the project
@@ -28,5 +34,6 @@
 
 # booking routes
 1. use http://localhost:8080/booking as base url, remaining urls you can see in routes folder in reservation.js file
+
 
 
