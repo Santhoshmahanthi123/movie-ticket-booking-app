@@ -1,0 +1,10 @@
+const express = require("express");
+const router = express.Router();
+const auth = require("../middlewares/user-auth");
+const movieController = require("../controllers/movie");
+router.post("/",auth.isAdmin,movieController.addMovie);
+router.get("/movies",movieController.findAllMovies);
+router.delete("/:id",auth.isAdmin,movieController.removeMovie);
+router.put("/:id",auth.isAdmin,movieController.updateMovieDetails);
+router.get("/search",movieController.filterMovies);
+module.exports = router;

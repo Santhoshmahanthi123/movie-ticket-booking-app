@@ -1,0 +1,10 @@
+const express = require("express");
+const router = express.Router();
+const userController = require("../controllers/user");
+const auth = require("../middlewares/user-auth");
+router.post("/",userController.registerUser);
+router.get("/users",userController.findAllUsers);
+router.post("/login",userController.loginUser);
+router.put("/:id",auth.isLoggedIn, userController.updateUserDetails);
+router.delete("/:id",auth.isLoggedIn,userController.removeUser);
+module.exports = router;
